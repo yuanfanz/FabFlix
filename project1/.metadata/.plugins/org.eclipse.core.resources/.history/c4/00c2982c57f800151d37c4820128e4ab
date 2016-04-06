@@ -1,0 +1,8 @@
+package com.fablix.moviedb.DAO;
+
+public class StarsDAO {
+	
+	public void addStar(){
+		
+	}
+}

@@ -1,0 +1,11 @@
+package com.fablix.moviedb.action;
+
+import java.util.List;
+
+import com.fablix.moviedb.model.Movies;
+
+public class MoviesAction {
+	public List<Movies> getMovies(){
+		return null;
+	}
+}

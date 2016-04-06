@@ -1,0 +1,52 @@
+package com.fablix.moviedb.view;
+
+import com.fablix.moviedb.db.dbConnection;
+
+public class LoginPhase {
+	
+	private static Prompt prompt;
+	
+	public static void allowAccess(){
+		
+		// check if username and pass word is right.
+		while(true){
+			
+			String username = prompt.promptUserName("Please Enter username: ");
+
+			char[] password = prompt.promptPWD("Please Enter password: ");
+
+			if (dbConnection.ifPWDRight( String.valueOf(password) )
+					&& dbConnection.ifUserRight(username) ){
+				password = null;
+				break;
+				
+			}else{
+				System.out.println("Invalid username or Wrong password!");
+				if (prompt.promptInt("Enter '1' to exit ") == 1){
+					System.out.println("Exiting now");
+					System.exit(0);
+				}
+			}
+		}
+		
+		//check if database can be connected.
+		while(true){
+			
+			if (dbConnection.getConnection()!= null){
+				break;
+			}else{
+				System.out.println("Database may not exist, an Error occurred when access to database!");
+				if (prompt.promptInt("Enter '1' to exit ") == 1){
+					System.out.println("Exiting now");
+					System.exit(0);
+				}
+			}
+		}
+		
+		System.out.println("Access succesfully!");
+	}
+	
+//	public static void main (String[] args){
+//		allowAccess();
+//	}
+}

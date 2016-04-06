@@ -1,0 +1,9 @@
+package com.fablix.moviedb.model;
+
+import java.util.Map;
+
+public class Table {
+	private String name;
+	private Map<String,String> attri_type; // attribute and type;
+	
+}

@@ -1,0 +1,11 @@
+package com.fablix.moviedb.model;
+
+public class Customers {
+	private int id;
+	private String first_name;
+	private String last_name;
+	private String cc_id;
+	private String address;
+	private String email;
+	private String password;
+}

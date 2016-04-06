@@ -1,0 +1,27 @@
+package com.fablix.moviedb.db;
+import java.sql.*;
+
+public class dbConnection {
+	
+	private static final String URL = "jdbc:mysql://127.0.0.1:3306/moviedb";
+	private static final String USER = "root";
+	private static final String PASSWORD = "1993zhangtianle";
+		
+	
+	public static void main(String[] arg) throws Exception {
+	   // Incorporate mySQL driver
+	   Class.forName("com.mysql.jdbc.Driver").newInstance();
+	           
+	   // Connect to the test database
+	   Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/moviedb","root", "1993zhangtianle");
+		 
+	   if(!connection.isClosed()){
+	      System.out.println("Succeeded connecting to the Database!");
+	   }         
+
+	   // Create an execute an SQL statement to select all of table"Stars" records
+	   Statement select = connection.createStatement();
+	   ResultSet result = select.executeQuery("Select * from stars");
+	}
+
+}

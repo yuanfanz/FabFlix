@@ -1,0 +1,24 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+
+import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Stars;
+
+public class StarsDAO {
+	
+	private static Connection conn = dbConnection.getConnection();
+	
+	public void addStar(){
+		
+	}
+	
+	public Stars getStars(String starName){
+		
+	}
+	
+	public Stars getStars(int id){
+		
+	}
+	
+}

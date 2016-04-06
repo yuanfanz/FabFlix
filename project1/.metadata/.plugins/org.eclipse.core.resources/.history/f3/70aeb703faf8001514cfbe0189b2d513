@@ -1,0 +1,44 @@
+package com.fablix.moviedb.view;
+
+import java.io.Console;
+import java.util.Scanner;
+
+public class prompt {
+	
+	private Scanner userIn; 
+	private Console userCons;
+	
+	public prompt(){
+		openScanner();
+	}
+	
+	private void openScanner(){
+		if (userIn == null){
+			userIn = new Scanner(System.in);
+		}
+	}
+
+	protected void closeScanner(){
+		if (userIn != null) {
+			userIn.close();
+		}
+		userIn = null;
+	}
+	
+	protected void openConsole(){
+		if (userCons == null){
+			userCons = System.console();
+		}
+	}
+
+	protected int promptInt(String message){
+		System.out.println(message);
+		return userIn.nextInt();
+	}
+	
+	protected String promptString(String message){
+		System.out.println(message);
+		return userIn.nextLine();
+	}
+}
+

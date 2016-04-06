@@ -1,0 +1,11 @@
+package com.fablix.moviedb.view;
+
+public class LoginPhase {
+	
+	private Prompt prompt;
+	public static allowAccess(){
+		while(true){
+			
+		}
+	}
+}

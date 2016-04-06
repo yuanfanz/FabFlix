@@ -1,0 +1,9 @@
+package com.fablix.moviedb.DAO;
+
+import com.fablix.moviedb.model.Movies;;
+
+public class MoviesDAO {
+	public Movies getMovieByStar(){
+		return null;
+	}
+}

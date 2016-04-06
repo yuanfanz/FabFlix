@@ -1,0 +1,27 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Stars;
+
+public class StarsDAO {
+	
+	private static Connection connection = dbConnection.getConnection();
+	private ResultSet result;
+	
+	
+	public void addStar(){
+		
+	}
+	public void jakjak(){
+		
+	}
+    
+	
+	
+}

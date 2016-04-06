@@ -1,0 +1,19 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+
+import com.fablix.moviedb.db.dbConnection;
+
+public class CustomerDAO {
+	private static Connection conn = dbConnection.getConnection();
+	
+	public boolean addCustomer(){
+		return false;
+	}
+	
+	public void delCustomer(){
+		
+	}
+	
+	
+}

@@ -1,0 +1,11 @@
+package com.fablix.moviedb.model;
+
+public class Movies {
+	private int id;
+	private String title;
+	private int year;
+	private String director;
+	private String banner_url;
+	private String trailer_url;
+	
+}

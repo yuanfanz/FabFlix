@@ -1,0 +1,5 @@
+package com.fablix.moviedb.action;
+
+public class CustomerAction {
+
+}

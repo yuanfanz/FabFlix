@@ -1,0 +1,32 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+
+import com.fablix.moviedb.db.dbConnection;
+
+public class QueryExecute {
+	private final static String SELECT = "SELECT";
+	private final static String UPDATE = "UPDATE";
+	private final static String INSERT = "INSERT";
+	private final static String DELETE = "DELETE";
+	
+	private static Connection conn = dbConnection.getConnection();
+	
+	public static void exeuteQuery(String sqlStatement){
+		sqlStatement = sqlStatement.toUpperCase();
+		if (sqlStatement.startsWith(SELECT)){
+			
+		}else if (sqlStatement.startsWith(UPDATE)){
+			
+		}else if (sqlStatement.startsWith(INSERT)){
+			
+		}else if (sqlStatement.startsWith(DELETE)){
+			
+		}else{
+			System.out.println("Invalid SQL command! not SELECT/UPDATE/INSERT/DELETE !");
+		}
+	}
+	
+	private  
+	
+}

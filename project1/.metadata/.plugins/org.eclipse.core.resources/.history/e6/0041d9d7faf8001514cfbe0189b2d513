@@ -1,0 +1,24 @@
+package com.fablix.moviedb.view;
+
+public class view {
+	private final static String CONTEXT = "\n(1) Find A Movie By A Star's Name\n"
+				+ "(2) Add A New Star\n"
+				+ "(3) Add A Customer\n"
+				+ "(4) Delete A Customer\n"
+				+ "(5) Print Schema of All Database Tables\n"
+				+ "(6) Execute SQL Command\n"
+				+ "(7) Exit the Menu\n"
+				+ "(8) Exit Program\n";
+	
+	public static void main(String[] args){
+		
+		//login
+		
+		System.out.println(CONTEXT);
+		
+		while(true){
+			
+			//action layer;
+		}
+	}
+}

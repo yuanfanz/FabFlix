@@ -1,0 +1,17 @@
+package com.fablix.moviedb.action;
+
+import java.util.List;
+
+import com.fablix.moviedb.DAO.MoviesDAO;
+import com.fablix.moviedb.model.Movies;
+
+public class MoviesAction {
+	
+	public List<Movies> getMoviesByStarName(String firstName, String lastName) throws Exception{
+		
+		MoviesDAO movieDao = new MoviesDAO();
+		return movieDao.getMovieByStarName(firstName, lastName);
+		
+	}
+
+}

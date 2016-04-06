@@ -1,0 +1,93 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Stars;
+
+public class StarsDAO {
+	
+	private static Connection connection = dbConnection.getConnection();
+	private static ResultSet result;
+	
+	public void addStar(){
+		
+	}
+	/**get the stars by firstname or lastname.
+	 * 
+	 * @param firstName lastName
+	 * @return List<Stars>
+	 * @throws Exception
+	 */
+	public static List<Stars> getStarsByName(String firstName, String lastName) throws Exception{
+		
+		List<Stars> stars = new ArrayList<Stars>();
+		 // prepare SQL statement template that's to be repeatedly excuted
+		
+		if (firstName.length()!=0 && lastName.length()!=0){
+			
+			String selectString = "SELECT id FROM stars WHERE first_name = ? AND last_name = ?";
+			PreparedStatement selectStars = connection.prepareStatement(selectString);
+			
+			selectStars.setString(1, firstName);
+			selectStars.setString(2, lastName);
+			
+			result = selectStars.executeQuery();
+		
+		}else if (firstName.length()==0 && lastName.length()!=0){
+			
+			String selectString = "SELECT id FROM stars WHERE last_name = ?";
+			PreparedStatement selectStars = connection.prepareStatement(selectString);
+			
+			selectStars.setString(1, lastName);
+			
+			result = selectStars.executeQuery();
+		
+		}else if (firstName.length()!=0 && lastName.length()==0){
+			
+			String selectString = "SELECT id FROM stars WHERE first_name = ?";
+			PreparedStatement selectStars = connection.prepareStatement(selectString);
+			
+			selectStars.setString(1, firstName);
+			
+			result = selectStars.executeQuery();
+		
+		}
+		
+		while (result.next()){
+			Stars s = new Stars();
+			s.setId(result.getInt(1));
+			stars.add(s);
+		}
+		
+		return stars;
+	}
+	
+	
+	public static List<Stars> getStarsById(int id) throws Exception{
+		
+		List<Stars> stars = new ArrayList<Stars>();
+		
+		String selectString = "SELECT id FROM stars WHERE id = ?";
+		PreparedStatement selectStars = connection.prepareStatement(selectString);
+		
+		selectStars.setInt(1, id);
+		
+		result = selectStars.executeQuery();
+		
+		
+		while (result.next()){
+			Stars s = new Stars();
+			s.setId(result.getInt(1));
+			stars.add(s);			
+		}
+		
+		return stars;
+		
+	}
+	
+}

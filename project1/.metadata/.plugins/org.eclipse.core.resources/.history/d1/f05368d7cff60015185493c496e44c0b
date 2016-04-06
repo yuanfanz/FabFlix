@@ -1,0 +1,14 @@
+package com.fablix.moviedb.DAO;
+
+public class CustomerDAO {
+	
+	public boolean addCustomer(){
+		
+	}
+	
+	public void delCustomer(){
+		
+	}
+	
+	
+}

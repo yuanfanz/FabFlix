@@ -1,0 +1,72 @@
+package com.fablix.moviedb.QueryExec;
+
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.fablix.moviedb.db.dbConnection;
+
+public class QueryExecute {
+	private final static String SELECT = "SELECT";
+	private final static String UPDATE = "UPDATE";
+	private final static String INSERT = "INSERT";
+	private final static String DELETE = "DELETE";
+	
+	private static Connection connection = dbConnection.getConnection();
+	
+	public static void exeuteQuery(String sqlStatement) throws Exception{
+		String Statement = sqlStatement.toUpperCase();
+		if (Statement.startsWith(SELECT)){
+			
+		}else if (Statement.startsWith(UPDATE)){
+			
+		}else if (Statement.startsWith(INSERT)){
+			
+		}else if (Statement.startsWith(DELETE)){
+			
+		}else{
+			System.out.println("Invalid SQL command! not SELECT/UPDATE/INSERT/DELETE !");
+		}
+	}
+	
+	private static void selectQuery(String sqlStatement) throws Exception{
+		try{
+			Statement select = connection.createStatement();
+	        ResultSet result = select.executeQuery(sqlStatement);
+	        
+	        ResultSetMetaData metadata = result.getMetaData();
+	        while (result.next()){
+	        	 for (int i = 1; i <= metadata.getColumnCount(); i++)
+	                 System.out.print(metadata.getColumnName(i)+" = ");
+	        }
+	       
+		
+		}catch (SQLException e){
+			
+		}
+        
+        
+		
+	}
+	
+	/**
+	 * 
+	 * @param sqlStatement_ DML
+	 * @param commandType 	 
+	 */
+	private static void otherCommand(String sqlStatement, String commandType ){
+		try{
+			Statement update = connection.createStatement();
+			int rowsChanged = update.executeUpdate(sqlStatement);
+			
+			System.out.println(commandType + "commmand is successful! The " 
+					          + rowsChanged + "rows have been changed!");
+		}catch (SQLException e){
+			System.out.println(commandType + "command failed!");
+		}			
+	}
+	
+}

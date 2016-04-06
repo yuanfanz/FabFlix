@@ -1,0 +1,16 @@
+package com.fablix.moviedb.view;
+
+import com.fablix.moviedb.db.dbConnection;
+
+public class LoginPhase {
+	
+	private static Prompt prompt;
+	public static void allowAccess(){
+		while(true){
+			String username = prompt.promptUserName("Please Enter username: ");
+			char[] password = prompt.promptPWD("Please Enter user's password: ");
+			
+			if (username != dbConnection.getUser());
+		}
+	}
+}

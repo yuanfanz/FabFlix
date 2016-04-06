@@ -1,0 +1,7 @@
+package com.fablix.moviedb.action;
+
+public class MoviesAction {
+	public List<Movies>getMovies(){
+		return null;
+	}
+}

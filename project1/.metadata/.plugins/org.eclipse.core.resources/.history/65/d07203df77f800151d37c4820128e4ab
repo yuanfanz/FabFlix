@@ -1,0 +1,66 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Stars;
+
+public class StarsDAO {
+	
+	private static Connection connection = dbConnection.getConnection();
+	private static ResultSet result = null;
+	
+	public void addStar(){
+		
+	}
+	/**get the stars by firstname or lastname.
+	 * 
+	 * @param starName
+	 * @return List<Stars>
+	 * @throws Exception
+	 */
+	public static List<Stars> getStars(String firstName, String lastName) throws Exception{
+		
+		List<Stars> stars = new ArrayList<Stars>();
+		 // prepare SQL statement template that's to be repeatedly excuted
+		String selectString = "SELECT id FROM stars WHERE first_name = ? OR last_name = ?";
+		PreparedStatement selectStars = connection.prepareStatement(selectString);
+		
+		selectStars.setString(1,firstName);
+		selectStars.setString(2,lastName);
+		
+		result = selectStars.executeQuery();
+		while (result.next()){
+			Stars s = new Stars();
+			s.setId(result.getInt(1));
+			stars.add(s);
+		}
+		
+		return stars;
+	}
+	
+	
+	public Stars getStars(int id) throws Exception{
+		
+		String selectString = "SELECT id FROM stars WHERE id = ?";
+		PreparedStatement selectStars = connection.prepareStatement(selectString);
+		
+		selectStars.setInt(1,id);
+		
+		result = selectStars.executeQuery();
+		
+		Stars s = new Stars();
+		if (result.next()){
+			s.setId(result.getInt(1));
+			return s;
+		}else{
+			return null;
+		}
+		
+	}
+	
+}

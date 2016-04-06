@@ -1,0 +1,28 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Movies;
+import com.fablix.moviedb.model.Stars;;
+
+public class MoviesDAO {
+	
+	private static Connection conn = dbConnection.getConnection();
+	private static ResultSet result;
+	
+	public static List<Movies> getMovieByStar(List<Stars> star){
+		
+		List<Movies> movies = new ArrayList<Movies>();
+		
+		if (!star.isEmpty()){
+			
+		}else{
+			return movies;
+		}
+	}
+
+}

@@ -1,0 +1,20 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+import java.util.List;
+
+import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Movies;;
+
+public class MoviesDAO {
+	
+	private static Connection conn = dbConnection.getConnection();
+	
+	public List<Movies> getMovieByStarName(String starName){
+		
+		return null;
+	}
+	
+	public List<Movies> 
+
+}

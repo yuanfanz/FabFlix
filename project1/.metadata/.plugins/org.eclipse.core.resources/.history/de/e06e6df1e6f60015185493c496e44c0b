@@ -1,0 +1,10 @@
+package com.fablix.moviedb.DAO;
+
+public class QueryExecute {
+	private final String SELECT = "SELECT";
+	private final String UPDATE = "UPDATE";
+	private final String INSERT = "INSERT";
+	private final String DELETE = "DELETE";
+	
+	
+}

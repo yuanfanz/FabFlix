@@ -1,0 +1,8 @@
+package com.fablix.moviedb.view;
+
+public class prompt {
+	protected int promptInt(String message){
+		System.out.println(message);
+		
+	}
+}

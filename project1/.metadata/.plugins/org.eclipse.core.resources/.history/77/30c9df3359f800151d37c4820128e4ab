@@ -1,0 +1,29 @@
+package com.fablix.moviedb.DAO;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Stars;
+
+public class StarsDAO {
+	
+	private static Connection connection = dbConnection.getConnection();
+	
+	public void addStar(){
+		
+	}
+	
+	public Stars getStars(String starName) throws Exception{
+		 // prepare SQL statement template that's to be repeatedly excuted
+		String selectString = "SELECT * FROM stars";
+		PreparedStatement selectStars = connection.prepareStatement(selectString);
+		
+		return null;
+	}
+	
+	public Stars getStars(int id) throws Exception{
+		
+	}
+	
+}

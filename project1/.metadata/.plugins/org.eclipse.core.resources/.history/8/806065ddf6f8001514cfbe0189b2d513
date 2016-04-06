@@ -1,0 +1,11 @@
+package com.fablix.moviedb.DAO;
+
+import java.util.List;
+
+import com.fablix.moviedb.model.Table;
+
+public class TableDAO {
+	public List<Table> getMetadata(){
+		return null;
+	}
+}

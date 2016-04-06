@@ -1,0 +1,79 @@
+package com.fablix.moviedb.view;
+
+import java.util.List;
+
+import com.fablix.moviedb.action.*;
+import com.fablix.moviedb.model.Movies;
+
+public class View {
+	
+	
+	private final static String CONTEXT = "\n(1) Find A Movie By A Star's Name\n"
+				+ "(2) Add A New Star\n"
+				+ "(3) Add A Customer\n"
+				+ "(4) Delete A Customer\n"
+				+ "(5) Print Schema of All Database Tables\n"
+				+ "(6) Execute SQL Command\n"
+				+ "(7) Exit the Menu\n"
+				+ "(8) Exit Program\n"
+				+"Please enter the number(1~8) of the operation: \n";
+	
+	private static Prompt prompt;
+	
+	public static void main(String[] args){
+		
+		prompt = new Prompt();
+		
+		//login
+		LoginPhase.allowAccess();
+		
+		//System.out.println(CONTEXT);
+		
+		while(true){
+			switch(prompt.promptInt("CONTEXT")){
+			case 1:
+				MoviesAction movieaction = new MoviesAction();
+				int operationNO = prompt.promptInt("Find a movie by (1)first Name and/or Last Name "
+						 + "(2) Id  of the star");
+				if ( operationNO == 1 ){
+					
+					String firstName = prompt.promptString("Please Enter First Name of the star if any:");
+					String lastName = prompt.promptString("Please Enter Last Name of the star if any:");
+					
+					List<Movies> movies = movieaction.getMoviesByStarName(firstName, lastName);
+					Print.printMovies(movies);
+					
+					break;
+				
+				}else if ( operationNO == 2 ){
+					
+					int id = prompt.promptInt("Please Enter ID of the star: ");
+					
+					List<Movies> movies = movieaction.getMoviesByStarId(id);
+					Print.printMovies(movies);
+					
+					break;
+				
+				}else{
+					
+				}
+				
+				
+				
+				movieaction.getMoviesByStarId(id);
+			case 2:
+				
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 8:
+			
+			default:
+				System.out.println("Invalid operation!");
+				break;
+			}
+			//action layer;
+		}
+	}
+}

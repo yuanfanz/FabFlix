@@ -1,0 +1,9 @@
+package com.fablix.moviedb.view;
+
+public class LoginPhase {
+	public static allowAccess(){
+		while(true){
+			
+		}
+	}
+}

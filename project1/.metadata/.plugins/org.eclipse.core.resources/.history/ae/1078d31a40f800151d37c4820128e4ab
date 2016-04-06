@@ -1,0 +1,13 @@
+package com.fablix.moviedb.model;
+
+import java.util.Date;
+
+public class Stars {
+	private int id;
+	private String first_name;
+	private String last_name;
+	private Date dob;
+	private String photo_url;
+	
+	
+}

@@ -1,0 +1,37 @@
+package com.fablix.moviedb;
+
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class QueryExecute {
+	private final static String SELECT = "SELECT";
+	private final static String UPDATE = "UPDATE";
+	private final static String INSERT = "INSERT";
+	private final static String DELETE = "DELETE";
+	
+	private static Connection connection = dbConnection.getConnection();
+	
+	public static void exeuteQuery(String sqlStatement) throws Exception{
+		String Statement = sqlStatement.toUpperCase();
+		if (Statement.startsWith(SELECT)){
+			
+		}else if (Statement.startsWith(UPDATE)){
+			
+		}else if (Statement.startsWith(INSERT)){
+			
+		}else if (Statement.startsWith(DELETE)){
+			
+		}else{
+			System.out.println("Invalid SQL command! not SELECT/UPDATE/INSERT/DELETE !");
+		}
+	}
+	
+	private static void selectQuery(String sqlStatement) throws Exception{
+		Statement select = connection.createStatement();
+        ResultSet result = select.executeQuery(sqlStatement);
+		
+	}
+	
+}

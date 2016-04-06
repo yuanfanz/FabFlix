@@ -1,0 +1,18 @@
+package com.fablix.moviedb.action;
+
+import java.util.List;
+
+import com.fablix.moviedb.DAO.MoviesDAO;
+import com.fablix.moviedb.model.Movies;
+
+public class MoviesAction {
+	
+	public List<Movies> getMoviesByStarName(){
+		
+		MoviesDAO movieDao = new MoviesDAO();
+		
+		return null;
+		
+	}
+
+}
