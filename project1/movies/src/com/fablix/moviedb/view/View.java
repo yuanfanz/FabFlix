@@ -181,8 +181,7 @@ public class View {
 					    s.setDob(newDob);
 					    
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						//e.printStackTrace()；
+
 						System.err.println(e.getMessage());
 						System.out.println("ERROR : Please enter the correct form of date of birth!");
 						continue;
