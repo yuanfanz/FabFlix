@@ -8,13 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fablix.moviedb.db.dbConnection;
-import com.fablix.moviedb.model.Genres;
+//import com.fablix.moviedb.model.MovieInfo;
 import com.fablix.moviedb.model.Movies;
-
+import com.fablix.moviedb.model.Genres;
+import com.fablix.moviedb.model.MovieInfo;
 
 public class GenresDAO {
-	
 	private Connection connection = dbConnection.getConnection();
+	
+    
 	
 	public List<Genres> getGenreByMovie( Movies movie ) throws SQLException{
 		

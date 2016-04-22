@@ -19,7 +19,7 @@ public class MoiveInfoDAO {
 	private GenresDAO gDAO = new GenresDAO();
 	private StarsDAO sDAO = new StarsDAO();
 	
-	public List<MovieInfo> searchMovieInfo( Map<String, Object> params, String orderWord, String ascDesc, 
+	public Pager<MovieInfo> searchMovieInfo( Map<String, Object> params, String orderWord, String ascDesc, 
 											boolean subMatch, int pageSize, int currentPage ) throws SQLException{
 		
 		Pager<Movies> movies = mDAO.searchMovies(params, orderWord, ascDesc, subMatch, pageSize, currentPage);
@@ -33,9 +33,31 @@ public class MoiveInfoDAO {
 				movieInfos.add(movieInfo);
 			}
 		}
-
-		//Pager<MovieInfo> movieInfos= new Pager<MovieInfo>();
-		return movieInfos;
+		
+		Pager<MovieInfo> movieInfosPage= new Pager<MovieInfo>(pageSize,currentPage, movies.getTotalRecord(), movieInfos);
+		return movieInfosPage;
 	}
+	
+	public Pager<MovieInfo> browseMovieInfo( String prefix, String orderWord, String ascDesc, int pageSize, int currentPage) throws SQLException{
+
+		//Pager<Movie> movies = mDAO.searchMovies(params, orderWord, ascDesc, subMatch, pageSize, currentPage);
+		
+		MoviesDAO mDao = new MoviesDAO();
+		
+
+		Pager<MovieInfo> movieInfosPage=  mDao.browseMoviesByTitle(prefix,orderWord,ascDesc,pageSize,currentPage);
+		return movieInfosPage;
+	}
+	public Pager<MovieInfo> browseMovieByGenre( String genre, String orderWord, String ascDesc, int pageSize, int currentPage) throws SQLException{
+
+		//Pager<Movie> movies = mDAO.searchMovies(params, orderWord, ascDesc, subMatch, pageSize, currentPage);
+		
+		MoviesDAO mDao = new MoviesDAO();
+		
+
+		Pager<MovieInfo> movieInfosPage=  mDao.getMovieByGenre(genre,orderWord,ascDesc,pageSize,currentPage);
+		return movieInfosPage;
+	}
+	
 
 }

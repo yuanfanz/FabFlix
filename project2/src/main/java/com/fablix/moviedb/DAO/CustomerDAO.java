@@ -156,4 +156,23 @@ public class CustomerDAO {
 		dbConnection.rsstmtClose(result, stmt);
 		return isAuthnct;
 	}
+	
+	public int findCusidByCc(String ccnum) throws SQLException{
+		ResultSet result;
+		PreparedStatement stmt;
+		int cus_id = -1;
+		String sql = "select id from customers where cc_id = ?";
+		stmt = connection.prepareStatement(sql);
+		
+		stmt.setString(1, ccnum);
+		result = stmt.executeQuery();
+		if (result.next()){
+			cus_id = result.getInt(1);
+		}
+		dbConnection.rsstmtClose(result, stmt);
+		if(cus_id == -1){
+			System.out.println("ERROR: Method: findCusidByCc() in CustomerDAO.java failed.");
+		}
+		return cus_id;
+	}
 }

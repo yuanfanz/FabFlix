@@ -5,6 +5,7 @@ import com.fablix.moviedb.db.dbConnection;
 import com.fablix.moviedb.model.Genres;
 import com.fablix.moviedb.model.Movies;
 import com.fablix.moviedb.model.Stars;
+import com.fablix.moviedb.model.Stars;
 //import com.fablix.moviedb.view.Print;
 
 import java.sql.*;
@@ -80,6 +81,42 @@ public class StarsDAO {
 		dbConnection.rsstmtClose(result, ptmt);
 		return stars;
 	}
+	
+	public Stars getStarsById(int id) throws SQLException{
+
+		Stars s = new Stars();
+		String sql = "select * from stars where id=?";
 		
+		// create a Statement from the connection
+		PreparedStatement prepstmt = connection.prepareStatement(sql);
+		
+
+
+		
+		prepstmt.setInt(1, id);
+		ResultSet rs = prepstmt.executeQuery();
+		
+		int i=0;
+		while(rs.next())
+		{
+			i++;
+		}
+		ResultSet rss = prepstmt.executeQuery();
+		if(i != 0)
+		{
+			rss.next();
+			s.setId(rss.getInt(1));
+			s.setFirst_name(rss.getString(2));
+			s.setLast_name(rss.getString(3));
+			s.setDob(rss.getDate(4));
+			s.setPhoto_url(rss.getString(5));
+		}	
+		//rs.close();
+		//prepstmt.close();
+		dbConnection.rsstmtClose(rss, prepstmt);
+		dbConnection.rsstmtClose(rs, null);
+		//connection.close();
+		return s;
+	}
 }
 
