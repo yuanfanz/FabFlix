@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Advanced search</title>
+    <style>
+    body{
+      font-family: 'Lato', sans-serif;
+      padding-top: 40px;
+      background-color: white;
+      background-image:url("source/blueflower.jpg");
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-attachment: fixed;
+    }
+    footer{
+      padding-top:50px;
+    }
+    </style>
+
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <div class="container">
+    <!-- title -->
+    <div class="jumbotron">
+      <h1>FabFlix</h1>
+      <h4>We have all the movies that you want!</h4>
+      <div class="menutext"><a href="default">Home</a> | <a href="advSearch?showForm=1">Advanced Search</a> | <a href="login">Sign in</a> | <a href="cart">My Cart</a></div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-lg-5 col-lg-offset-5">
+        <h4>Advanced Search Options:</h4>
+        <form action="" method="post"> 
+              <div class="form-group">
+                <label for="InputTitle">Title:</label>
+                <input type="text" class="form-control" id="InputTitle" placeholder="Title">
+              </div>
+              <div class="form-group">
+                <label for="InputYear">Year:</label>
+                <input type="Year" class="form-control" id="InputYear" placeholder="Year">
+              </div>
+              <div class="form-group">
+                <label for="InputDirector">Director:</label>
+                <input type="text" class="form-control" id="InputDirector" placeholder="Director">
+              </div>
+              <div class="form-group">
+                <label for="InputStarfn">Star's First Name:</label>
+                <input type="text" class="form-control" id="InputStarfn" placeholder="Star's First Name">
+              </div>
+              <div class="form-group">
+                <label for="InputStarln">Star's Last Name:</label>
+                <input type="text" class="form-control" id="InputStarln" placeholder="Star's Last Name">
+              </div>
+              <div class="checkbox">
+                <label>Fuzzy Search:</label>
+                  <label><input type="checkbox"> *will match spelling errors to some extent</label>
+              </div>
+              <div class="checkbox">
+                <label>Match Substring:</label>
+                  <label><input type="checkbox">  *will match portions of a larger string</label>
+              </div>
+              <button type="button" class="btn btn-primary btn-block" >Search!</button>
+              <button type="button" class="btn btn-primary btn-block" >Reset form!</button>
+        </form>
+      </div>
+
+
+
+  </div>
+  <div class="row">
+      
+      <footer class="col-lg-5 col-lg-offset-5">
+        <p>Posted by: cs122b-Group20</p>
+        <p>Contact information: <a href="mailto:sc122b20@uci.edu">sc122b20@uci.edu</a>.</p>
+      </footer> 
+      
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

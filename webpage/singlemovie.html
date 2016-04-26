@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Movie information</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+    body{
+      
+      font-family:'Trebuchet MS', Helvetica, sans-serif;
+      padding-top: 1px;
+      background-color: white;
+      background-image:url("source/paris.jpg");
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: fixed;
+    }
+    img {
+    float: left ;
+    margin: 20px 0 10px 10px;
+    padding-left: 50px;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    }
+    img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+    }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">   
+    <!-- title -->
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-1">
+            <div class="row">
+              <div class="col-lg-7">
+                <h1>FabFlix</h1>
+                <h4>We have all the movies that you want!</h4>
+                <div class="menutext"><a href="default">Home</a> | <a href="advSearch?showForm=1">Advanced Search</a> | <a href="login">Sign in</a> | <a href="cart">My Cart</a></div>
+              </div>
+              <div class="col-lg-5">
+                <input type="text" name="search" onfocus="this.select()" onblur="this.value=!this.value?'  Click here to search a movie...':this.value;" value=" Click and search movies" class="box" />
+                <button class="btn" title="Submit Search">Search</button>
+              </div>
+            </div>
+          </div>
+            
+        </div>
+      </div>
+      
+      <div class="jumbotron">
+        <h2>Movie Details:</h2>
+        <img src="..." alt="..." width="400" height="400">
+        <div class="row">
+          
+          <div class="col-lg-6 col-lg-offset-1">
+            <div class="thumbnail">
+              
+              <div class="caption">
+                <h3>Movie's name</h3>
+                <table>
+                <tr>
+                  <td style="text-align:left;">Title:</td>
+                  <td style="text-align:left;">Click</td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Year:</td>
+                  <td style="text-align:left;">****</td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Director:</td>
+                  <td style="text-align:left;">####</td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Stars:</td>
+                  <td style="text-align:left;"><a href="..">***</a>, <a href="..">####</a>, <a href="..">@@@@@</a><br /><a href="getStar?starid=569">$$$$$</a>, <a href="getStar?starid=772">^^^^^</a></td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Genre:</td>
+                  <td style="text-align:left;">Comedy, Drama, Fantasy</td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Trailer:</td>
+                  <td style="text-align:left;"><a href="http://www.imdb.com/title/tt0389860/trailers">Click here</a> to watch the movie trailer</td>
+                </tr>
+                <tr>
+                  <td style="text-align:left;">Price:</td>
+                  <td style="text-align:left;">$15.99</td>
+                </tr>
+                </table>
+
+
+                
+                <p><a href="#" class="btn btn-primary" role="button">Add to cart!</a> <a href="#" class="btn btn-default" role="button">See more!</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div align="center" style="font-size:small"><a href="javascript:history.go(-1)">Go back to previous page</a></div></br>
+        <div class="tinyspacer">&nbsp;<br /></div>
+        <div align="center"><a href="default">Home</a> | <a href="about.html">About Us</a> | <a href="#">Register an Account</a> | <a href="policy.html">Privacy Policy</a> | <a href="checkout">Check Out</a>
+          <div class="tinyspacer">&nbsp;<br />Copyright &copy; . All rights reserved.<br />This page was generated in 0.003 seconds.</div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
