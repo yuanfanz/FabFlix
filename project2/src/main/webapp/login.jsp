@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">   
 <title>FabFlix login</title>
-
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <script>
 
@@ -98,7 +98,7 @@ window.onload = function(){
 						<p class="submit">
 						<input type="submit" value="login" class="login" style="cursor:pointer;"/>
 						</p>
-
+						<div class="g-recaptcha" data-sitekey="6LfyaR4TAAAAAD1PCJsZ3WAkv3JVgoGp7YSov1qo"></div>
 					</form>
 				</div>
 
