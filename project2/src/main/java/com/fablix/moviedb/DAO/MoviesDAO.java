@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -456,4 +457,60 @@ public Pager<MovieInfo> getMovieByGenre(String genre, String orderWord, String a
     		
     		return m;
     }
+    
+    public Movies getMovieByTitle(String title) throws SQLException{
+		
+		Movies m = new Movies();
+		m.setId(-1);
+		String sql = "select * from movies where title=?";
+		
+		// create a Statement from the connection
+		PreparedStatement prepstmt = connection.prepareStatement(sql);
+		
+		prepstmt.setString(1, title);
+		ResultSet rs = prepstmt.executeQuery();
+		
+		while(rs.next()){
+    		
+    		m.setId(rs.getInt(1));
+			m.setTitle(rs.getString(2));
+			m.setYear(rs.getInt(3));
+			m.setDirector(rs.getString(4));
+			m.setBanner_url(rs.getString(5));
+			m.setTrailer_url(rs.getString(6));
+		}
+		
+		//rs.close();
+		//prepstmt.close();
+		dbConnection.rsstmtClose(rs, prepstmt);
+		//connection.close();
+		
+		return m;
+    }
+    
+    public void addMovie(Movies m, String first_name, String last_name, String genre) throws SQLException{
+		
+		String title = m.getTitle();
+		String director = m.getDirector();
+		int year = m.getYear();
+		String banner_url = m.getBanner_url();
+		String trailer_url = m.getTrailer_url();
+		
+		//insert new star
+		String insertStar = "INSERT INTO movies (title, director, year, banner_url, trailer_url) VALUES (?,?,?,?,?)";
+	    PreparedStatement insert = connection.prepareStatement(insertStar);
+			 
+	    insert.setString(1, title);
+	    insert.setString(2, director);
+		insert.setInt(3, year);
+		insert.setString(4, banner_url);
+		insert.setString(5, trailer_url);
+		
+		System.out.println("Number of movies added: " + insert.executeUpdate());
+		//dbConnection.connectionClose(null, insert, connection);
+		StarsDAO sdao = new StarsDAO();
+		sdao.updateStar(first_name, last_name, m);
+		
+		dbConnection.rsstmtClose(null, insert);
+	}
 }

@@ -118,5 +118,79 @@ public class StarsDAO {
 		//connection.close();
 		return s;
 	}
+	
+	public Stars getStarsByName(String first, String last) throws SQLException{
+
+		Stars s = new Stars();
+		s.setId(-1);
+		String sql = "select * from stars where first_name=? AND last_name=?";
+		
+		// create a Statement from the connection
+		PreparedStatement prepstmt = connection.prepareStatement(sql);
+
+		prepstmt.setString(1, first);
+		prepstmt.setString(2, last);
+		ResultSet rs = prepstmt.executeQuery();
+		
+		int i=0;
+		while(rs.next())
+		{
+			i++;
+		}
+		ResultSet rss = prepstmt.executeQuery();
+		if(i != 0)
+		{
+			rss.next();
+			s.setId(rss.getInt(1));
+			s.setFirst_name(rss.getString(2));
+			s.setLast_name(rss.getString(3));
+			s.setDob(rss.getDate(4));
+			s.setPhoto_url(rss.getString(5));
+		}	
+		//rs.close();
+		//prepstmt.close();
+		dbConnection.rsstmtClose(rss, prepstmt);
+		dbConnection.rsstmtClose(rs, null);
+		//connection.close();
+		return s;
+	}
+	
+	public boolean updateStar(String first_name, String last_name, Movies m) throws SQLException
+	{
+		List<Stars> result = getStarsByMovie(m);
+		boolean update = true;
+		for(Stars s : result)
+		{
+			String sfirstname,slastname;
+			sfirstname = s.getFirst_name();
+			slastname = s.getLast_name();
+			if(first_name.equals(sfirstname) && last_name.equals(slastname))
+			{
+				update = false;
+				break;
+			}
+		}
+		if(update == false)
+		{
+			return false;
+		}else{
+			Stars updates = new Stars();
+			updates.setFirst_name(first_name);
+			updates.setLast_name(last_name);
+			addStar(updates);
+			int star_id = getStarsByName(first_name,last_name).getId();
+			int movie_id = m.getId();
+			String sql = "INSERT INTO stars_in_movies (star_id, movie_id) VALUES (?,?)";
+			
+			// create a Statement from the connection
+			PreparedStatement prepstmt = connection.prepareStatement(sql);
+
+			prepstmt.setInt(1, star_id);
+			prepstmt.setInt(2, movie_id);
+			prepstmt.executeQuery();
+
+		}
+		return true;
+	}
 }
 
