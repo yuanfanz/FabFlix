@@ -42,7 +42,7 @@ public class loginFilter implements Filter {
 		
 		String uri = request.getRequestURI();
 		//System.out.println(uri);
-		if (uri.contains("login")){
+		if (uri.contains("login") || uri.contains("dash")){
 			if (request.getSession().getAttribute("user")!=null){
 				response.sendRedirect(request.getContextPath()+"/main.jsp");
 			}else{
