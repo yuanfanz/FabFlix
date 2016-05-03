@@ -2,11 +2,13 @@ package com.fablix.moviedb.DAO;
 
 //import com.fablix.moviedb.action.StarsAction;
 import com.fablix.moviedb.db.dbConnection;
+import com.fablix.moviedb.model.Movies;
 import com.fablix.moviedb.model.Stars;
 //import com.fablix.moviedb.view.Print;
 
 import java.sql.*;
 import java.util.Date;
+import java.util.HashSet;
 
 public class StarsDAO {
 	
@@ -45,6 +47,8 @@ public class StarsDAO {
 		System.out.println("Number of star details added: " + insert.executeUpdate());
 		dbConnection.connectionClose(null, insert, connection);
 	}
+	
+
 	
 		
 }
