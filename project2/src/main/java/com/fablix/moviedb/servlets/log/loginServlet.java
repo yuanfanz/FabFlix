@@ -1,7 +1,10 @@
 package com.fablix.moviedb.servlets.log;
+import java.util.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import com.fablix.moviedb.DAO.CustomerDAO;
 import com.fablix.moviedb.model.User;
+import com.fablix.moviedb.verify.verifyUtils;
 
 /**
  * Servlet implementation class loginServlet
@@ -46,8 +50,22 @@ public class loginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		User user = new User();
+		PrintWriter out = response.getWriter();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String gRecaptchaResponse = request.getParameter("g-recaptcha-response");
+		System.out.println("gRecaptchaResponse=" + gRecaptchaResponse);
+		// Verify CAPTCHA.
+		boolean valid = verifyUtils.verify(gRecaptchaResponse);
+		if (!valid) {
+		    //errorString = "Captcha invalid!";
+		    out.println("<HTML>" +
+				"<HEAD><TITLE>" +
+				"MovieDB: Error" +
+				"</TITLE></HEAD>\n<BODY>" +
+				"<P>Recaptcha WRONG!!!! </P></BODY></HTML>");
+		    
+		}else{
 		try{
 			if (cDAO.isAuthenticate(username, password)){
 				
@@ -67,6 +85,7 @@ public class loginServlet extends HttpServlet {
 		
 		}catch(SQLException ex){
 			System.err.println(ex.getMessage());
+		}
 		}
 	}
 
