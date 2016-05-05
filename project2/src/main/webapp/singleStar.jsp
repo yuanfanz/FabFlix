@@ -129,7 +129,7 @@
 		</div>
 		<footer class="col-lg-4 col-lg-offset-4">
         <p>Posted by: cs122b-Group20</p>
-       	 <p>Contact information: <a href="mailto:sc122b20@uci.edu">sc122b20@uci.edu</a>.</p>
+       	 <p>Contact information: <a href="mailto:sc122b20@uci.edu">cs122b20@uci.edu</a>.</p>
      	</footer>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
