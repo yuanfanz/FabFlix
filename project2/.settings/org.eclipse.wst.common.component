@@ -5,6 +5,18 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <dependent-module archiveName="mysql-connector-java-5.0.8-bin.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Jocy/Documents/workspace_122b/project1/cs122b/project2/src/main/webapp/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.json-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Jocy/Documents/workspace_122b/project1/cs122b/project2/src/main/webapp/WEB-INF/lib/javax.json-1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="servlet-api.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Jocy/Documents/workspace_122b/project1/cs122b/project2/src/main/webapp/WEB-INF/lib/servlet-api.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="recaptcha4j-0.0.7.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//Users/Jocy/Documents/workspace_122b/project1/cs122b/project2/src/main/webapp/WEB-INF/lib/recaptcha4j-0.0.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/project2/target/classes"/>
         <property name="context-root" value="project2"/>
     </wb-module>
