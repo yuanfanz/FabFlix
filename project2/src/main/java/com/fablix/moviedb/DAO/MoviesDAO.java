@@ -488,6 +488,33 @@ public Pager<MovieInfo> getMovieByGenre(String genre, String orderWord, String a
 		return m;
     }
     
+public ArrayList<String> browseMovies(String title) throws SQLException{
+		ArrayList<String> list = new ArrayList<String>();
+		
+		String sql = "SELECT title FROM movies WHERE title LIKE ?";
+		String data;
+		
+		// create a Statement from the connection
+		PreparedStatement prepstmt = connection.prepareStatement(sql);
+		
+		prepstmt.setString(1,"%" + title + "% ");
+		ResultSet rs = prepstmt.executeQuery();
+		
+		while(rs.next()){
+    		
+			data = rs.getString(1);
+            list.add(data);
+			
+		}
+		
+		//rs.close();
+		//prepstmt.close();
+		dbConnection.rsstmtClose(rs, prepstmt);
+		//connection.close();
+		
+		return list;
+    }
+    
     public void addMovie(Movies m, String first_name, String last_name, String genre) throws SQLException{
 		
 		String title = m.getTitle();
