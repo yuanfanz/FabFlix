@@ -39,7 +39,7 @@
 <div class="jumbotron">
         <h1>FabFlix</h1>
         <h4>For employee!</h4>
-        <div class="menutext"><a href="emplyeedash.jsp">Employee</a> </div>
+        <div class="menutext"><a href="employeedash.jsp">Employee</a> </div>
 </div>
 <div class="jumbotron" id="shopping" style="text-align:center">
     <%-- 
