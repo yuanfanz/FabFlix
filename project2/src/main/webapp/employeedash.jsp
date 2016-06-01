@@ -51,11 +51,11 @@
       	 <h2>For employees!</h2>
     	</div>
     	
-    	<a href="/project2/dashAddStar.jsp">Add a new star!</a>
+    	<a href="/fabflix/dashAddStar.jsp">Add a new star!</a>
 		<br/>
-		<a href="/project2/dashMetadata.jsp">Show metadata!</a>
+		<a href="/fabflix/dashMetadata.jsp">Show metadata!</a>
 		<br/>
-		<a href="/project2/dashAddMovie.jsp">Add or update a movie!</a>
+		<a href="/fabflix/dashAddMovie.jsp">Add or update a movie!</a>
 		<br/>
 		
 </div>
