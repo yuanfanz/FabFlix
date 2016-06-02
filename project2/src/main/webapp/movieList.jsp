@@ -11,6 +11,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MovieList</title>
 <style>
+.qtip-wiki{
+    width: 700px;
+}
+
+.qtip-wiki p{
+    margin: 0 0 6px;
+}
+
+.qtip-wiki h1{
+    font-size: 5px;
+    line-height: 1.1;
+    margin: 0 0 1px;
+}
+
+.qtip-wiki img{
+    float: left;
+    margin: 5px 5px 5px 0;
+}
+
+.qtip-wiki .info{
+    overflow: hidden;
+}
+
+.qtip-wiki p.note{
+    font-weight: 700;
+}
+
     body{
       font-family:'Trebuchet MS', Helvetica, sans-serif;
       padding-top: 1px;
@@ -34,7 +61,13 @@
 
     <!-- Bootstrap -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" 
+  href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.1/jquery.qtip.min.css">
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
+  <script src="popup.js"></script>
 <script type="text/javascript">
 	//window.alert("wowowowowo");
 	//var query = ${query}
@@ -116,6 +149,8 @@
 				+ pageSize);
 	}
 </script>
+
+
 </head>
 
 
@@ -155,9 +190,11 @@
 					<td><c:url value="/singleMovie.jsp" var="browse" > 
   						<c:param name="id" value="${movieInfo.movie.id}" />
 						</c:url> 
-						<a href="${browse}">
+						<div class="selector">
+						<a href="${browse}" id="trigger" name="${movieInfo.movie.title}">
 						<c:out value="${movieInfo.movie.title}"></c:out>
 						</a>
+						</div>
 					</td>
 				</tr>
 				<td>&nbsp;</td>
@@ -265,10 +302,7 @@
      	</div>
 	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
