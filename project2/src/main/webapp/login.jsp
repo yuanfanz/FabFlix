@@ -100,6 +100,8 @@ window.onload = function(){
 						</p>
 						<div class="g-recaptcha" data-sitekey="6LfyaR4TAAAAAD1PCJsZ3WAkv3JVgoGp7YSov1qo"></div>
 					</form>
+					
+					<h2><a href="/fabflix/_dashboard.jsp">For employee entry!</a></h2>
 				</div>
 
 			</div>
