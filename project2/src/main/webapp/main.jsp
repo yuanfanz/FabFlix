@@ -8,10 +8,17 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="autocomplete.js"></script>
+<link rel="stylesheet" 
+  href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 <title>Home</title>
 <style>
     body{
@@ -48,6 +55,12 @@
         <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+      <li><form action='searchServlet' method='post'><div class="search-container"><div class="ui-widget">search:<input id="movietitle" name="title"><ul id="results"></ul></div>
+<br>
+</div></form>
+      </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li><a href="cart.jsp">My cart</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -57,14 +70,19 @@
     </div>
    </div><!-- /.container-fluid -->
 </nav>
+
+
+<!-- <div class="ui-widget"><label for="tags">search</label> <input id="tags"></div> -->
 <%! char c='0'; %> 
+
+
 
 <div id="container">
 <h1 style="text-align: center;">Search Movies</h1>
 		<div id="search-box" style="text-align:center">
 			<form action='searchServlet' method='post'>
 				<p class="main">
-					<label>title : </label> <input name="title"><br> 
+					<label>title : </label> <input name="title" ><br> 
 					<label>year : </label> <input name="year"><br>
 					<label>director : </label><input name="director"><br>
 					<label>star's first Name: </label><input name="first_name"><br>
@@ -202,8 +220,7 @@
 </div><!--  end of container -->
 
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 <!--    <script src="js/bootstrap.min.js"></script> -->
 
