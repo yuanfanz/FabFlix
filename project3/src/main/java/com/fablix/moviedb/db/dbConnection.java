@@ -5,7 +5,7 @@ public class dbConnection {
 	
 	private static final String URL = "jdbc:mysql://127.0.0.1:3306/moviedb";
 	private static final String USER = "root";
-	private static final String PASSWORD = "1993zhangtianle";
+	private static final String PASSWORD = "123456";
 	
 	private static Connection connection = null;
 		
